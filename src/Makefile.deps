@@ -1,0 +1,11 @@
+astree.o: astree.cpp astree.h auxlib.h stringset.h \
+lyutils.h yyparse.h symboltable.h
+lyutils.o: lyutils.cpp lyutils.h astree.h auxlib.h yyparse.h
+auxlib.o: auxlib.cpp auxlib.h
+stringset.o: stringset.cpp stringset.h auxlib.h 
+main.o: main.cpp astree.h stringset.h auxlib.h lyutils.h \
+yyparse.h symboltable.h emit.h
+yylex.o: yylex.cpp auxlib.h lyutils.h astree.h yyparse.h
+yyparse.o: yyparse.cpp lyutils.h astree.h auxlib.h yyparse.h
+symboltable.o: symboltable.cpp auxlib.h stringset.h lyutils.h yyparse.h
+emit.o: emit.cpp astree.h auxlib.h emit.h lyutils.h yyparse.h
